@@ -1,0 +1,113 @@
+﻿@model CreateUserDto
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white  py-2">Create Product</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row" asp-action="Create" asp-controller="User" enctype="multipart/form-data">
+            <div class="border p-3">
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Name" class="form-control border-0 shadow" />
+                    <label asp-for="Name" class="ms-2"></label>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Email" class="form-control border-0 shadow" type="email" />
+                    <label asp-for="Email" class="ms-2"></label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                  <div class="form-floating py-2 col-12">
+                    <input type="number" asp-for="PhoneNumber" class="form-control border-0 shadow" />
+                    <label asp-for="PhoneNumber" class="ms-2"></label>
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>  
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="DOB" class="form-control border-0 shadow" />
+                    <label asp-for="DOB" class="ms-2"></label>
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="StreetAddress" class="form-control border-0 shadow" />
+                    <label asp-for="StreetAddress" class="ms-2"></label>
+                    <span asp-validation-for="StreetAddress" class="text-danger"></span>
+                </div>
+                  <div class="form-floating py-2 col-12">
+                    <input asp-for="City" class="form-control border-0 shadow" />
+                    <label asp-for="City" class="ms-2"></label>
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+
+
+                  <div class="form-floating py-2 col-12">
+                    <input asp-for="State" class="form-control border-0 shadow" />
+                    <label asp-for="State" class="ms-2"></label>
+                    <span asp-validation-for="State" class="text-danger"></span>
+                </div>
+
+                  <div class="form-floating py-2 col-12">
+                    <input asp-for="PostalCode" class="form-control border-0 shadow" />
+                    <label asp-for="PostalCode" class="ms-2"></label>
+                    <span asp-validation-for="PostalCode" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+                    <input type="password" asp-for="Password" class="form-control border-0 shadow" />
+                    <label asp-for="Password" class="ms-2"></label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-floating py-2 col-12">
+
+                    <input id="ImageUrl" asp-for="ImageUrl" class="form-control" accept=".png, .jpg" />
+                    <label asp-for="ImageUrl" class="ms-2"></label>
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+
+                </div>
+                
+                <div class="form-floating py-2 col-12">
+                    <select asp-for="UserType"  class="form-select border-0 shadow">
+                        <option disabled selected>--Select UserType--</option>
+                        <option value="@UserType.Admin">Admin</option>
+                        <option value="@UserType.Company">Company</option>
+                        <option value="@UserType.Employee">Employee</option>
+                        <option value="@UserType.Customer">Customer</option>
+
+                    </select>
+                    <label asp-for="UserType" class="ms-2"></label>
+                    <span asp-validation-for="UserType" class="text-danger"></span>
+                </div>
+
+
+                <div class="row pt-2">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control">Create</button>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="User" asp-action="Index" class="btn btn-outline-primary border  form-control">
+                            Back to List
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+@section Scripts{
+    @{
+        
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
